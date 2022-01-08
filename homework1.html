@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=s, initial-scale=1.0">
+    <title>Emoji score</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body background="photo/ben-o-bro-wpU4veNGnHg-unsplash.jpg">
+    
+    <div id="example-1">
+        
+        <button @click="plus(9),likes(1)" class="btn"><div><img src="photo/facebook-reaction-like.png" alt="" width="100" height="100"></div></button>
+        <p style="font-size: 50px;">{{ like }} like</p>
+        <button @click="plus(19),loves(1)" class="btn"><div><img src="photo/facebook-love-logo.png" alt="" width="100" height="100"></div></button>
+        <p style="font-size: 50px;">{{ love }} love</p>
+        <button @click="plus(24),laughs(1)" class="btn"><div><img src="photo/haha-facebook-facebook-haha-icon-115631286864te9fco2mv.png" alt="" width="100" height="100"></div></button>
+        <p style="font-size: 50px;">{{ laugh }} laugh</p>
+        <button @click="plus(29),wows(1)" class="btn"><div><img src="photo/facebook-wow-logo-513024AEFB-seeklogo.com.png" alt="" width="100" height="100"></div></button>
+        <p style="font-size: 50px;">{{ wow }} WOW</p>
+        <button @click="plus(-14),sads(1)" class="btn"><div><img src="photo/Facebook-Sad.jpeg" alt="" width="100" height="100"></div></button>
+        <p style="font-size: 50px;">{{ sad }} sad</p>  
+        <button @click="plus(-49),angrys(1)" class="btn"><div><img src="photo/facebook-angry-emoji-emoticon-logo-4EC357E553-seeklogo.com.png" alt="" width="100" height="100"></div></button>
+        <p style="font-size: 50px;">{{ angry }} angry</p>      
+        <p style="font-size: 50px;">{{ counter }} point</p>
+        
+
+
+    </div>
+</body>
+</html>
+<script>
+    var example1 = new Vue({
+        el: '#example-1',
+        data: {
+            counter: 0,
+            like:0,
+            love:0,
+            laugh:0,
+            wow:0,
+            sad:0,
+            angry:0,
+        },
+        methods: {
+            plus: function(i) {
+                this.counter += i;
+            },
+            minus: function(i) {
+                this.counter -= i;
+            },
+            likes: function(i) {
+                this.counter += i;
+                this.like+=i;
+            },
+            loves:function(i){
+                this.counter += i;
+                this.love +=i;
+            },
+            wows:function(i){
+                this.counter += i;
+                this.wow +=i;
+            },
+            laughs:function(i){
+                this.counter+=i;
+                this.laugh+=i;
+            },
+            sads:function (i){
+                this.counter-=i;
+                this.sad+=i;
+            },
+            angrys:function(i)   {
+                this.counter-=i
+                this.angry+=i
+
+            },
+        }
+        
+    })
+</script>
